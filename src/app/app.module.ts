@@ -30,6 +30,7 @@ import { ElementDirective } from './main-editor/element-container.directive';
   ],
   entryComponents: [BpmnElementComponent],
   providers: [
+    ModelingSurfaceComponent,
     BpmnElementFactoryComponent,
   ],
   bootstrap: [AppComponent]
