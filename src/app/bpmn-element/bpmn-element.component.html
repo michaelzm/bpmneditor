@@ -1,5 +1,5 @@
-<div class = "bpmn-element" cdkDrag>
+<div class = "bpmn-element" cdkDrag (cdkDragEnded)="dragEnd($event)" (dblclick)="displayInformations($event)">
     <div class = "bpmn-element-title">
-        E
+        {{data}}
     </div>
 </div>
