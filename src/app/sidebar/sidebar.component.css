@@ -1,4 +1,3 @@
 .sidebar-container {
     border: 3px solid red;
-    height: calc(100vh - 100px);
 }
