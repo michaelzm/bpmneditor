@@ -6,10 +6,19 @@ import { BpmnElement } from './bpmn-element';
   providedIn: 'root'
 })
 export class BpmnElementsService {
+public elements: BpmnElement[] = [];
 
-  constructor() { }
+  constructor() {
+    this.addElement('activity');
+   }
+
+  addElement(type: string) {
+    this.elements.push(new BpmnElement(BpmnElementComponent, 'activity', {data: type}));
+    console.log('added element to existing array');
+    console.log(this.elements);
+  }
 
   getElements() {
-    return new BpmnElement(BpmnElementComponent, {name: 'TestActivity'});
+    return this.elements[0];
   }
 }

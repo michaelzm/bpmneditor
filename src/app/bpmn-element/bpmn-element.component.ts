@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import {Output, EventEmitter} from '@angular/core';
 
-import {BpmnElement } from './bpmn-element';
+import {EditorInterfaceService} from '../editor-interface.service';
 
 // import { MainEditorComponent } from '../main-editor/main-editor.component';
 
@@ -13,12 +13,16 @@ import {BpmnElement } from './bpmn-element';
   styleUrls: ['./bpmn-element.component.css']
 })
 export class BpmnElementComponent implements OnInit {
-
+  @Input() type: string;
   @Output() notify: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(
-    // private mainEditor: MainEditorComponent
-    ) { }
+  constructor( private editorInterface: EditorInterfaceService
+    ) {
+      console.log('constructor knows ' + this.type);
+     }
+
+  ngOnInit() {
+  }
 
   dragStart(event): void {
     console.log(event);
@@ -29,13 +33,13 @@ export class BpmnElementComponent implements OnInit {
     console.log('ended drag with ');
     console.log(element);
     console.log(event);
-
     console.log('alter drag container');
+    this.editorInterface.addElementToEditor();
   }
 
   displayInformations(event): void {
-    console.log('infos')
-    var element = event.target;
+    console.log('infos');
+    let element = event.target;
     const rect = element.getBoundingClientRect();
     // rect.top = 1000;
     console.log(element.style.transform);
@@ -52,7 +56,5 @@ export class BpmnElementComponent implements OnInit {
     // this.notify.emit("standard")
   }
 
-  ngOnInit() {
-  }
 
 }

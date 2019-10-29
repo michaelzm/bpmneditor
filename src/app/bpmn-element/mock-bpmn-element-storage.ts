@@ -2,7 +2,7 @@ import { BpmnElement } from './bpmn-element';
 
 import { BpmnElementComponent } from './bpmn-element.component';
 
-var MOCKBPMNELEMENT = new BpmnElement(BpmnElementComponent, 'Mockactivity');
+const MOCKBPMNELEMENT = new BpmnElement(BpmnElementComponent, 'activityMock', 'Mockactivity');
 
 
 /* MOCKBPMNELEMENT.description = "generic description";
