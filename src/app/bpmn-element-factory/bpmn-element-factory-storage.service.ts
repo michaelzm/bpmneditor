@@ -8,9 +8,9 @@ export class BpmnElementFactoryStorageService {
   elements: BpmnElement[] = [];
   constructor() { }
 
-  addElement(element: BpmnElement){
-    console.log(element)
-    console.log("adding element to ")
+  addElement(element: BpmnElement) {
+    console.log(element);
+    console.log('adding element to ');
     console.log(this.elements);
     this.elements.push(element);
   }

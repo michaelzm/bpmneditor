@@ -6,7 +6,7 @@ import { BpmnElementFactoryStorageService } from './bpmn-element-factory-storage
 
 
 /**
- * This factory produces the different kinds of bpmn elements
+ * This factory produces the different kinds of bpmn elements, should not be a component
  */
 @Component({
   selector: 'app-bpmn-element-factory',
@@ -14,37 +14,30 @@ import { BpmnElementFactoryStorageService } from './bpmn-element-factory-storage
   styleUrls: ['./bpmn-element-factory.component.css']
 })
 export class BpmnElementFactoryComponent implements OnInit {
-  public storage: number[] = [1,2,512,6121, 82, 1,2,41,25,1];
-  constructor( 
-    private storageService : BpmnElementFactoryStorageService) 
-    {}
-  
+  public storage: number[] = [1, 2, 512, 6121, 82, 1, 2, 41, 25, 1];
+  constructor(
+    private storageService: BpmnElementFactoryStorageService) {}
+
   ngOnInit() {
     console.log();
   }
 
+  createElementFromType(type: string) {
+    switch (type) {
+      case 'activity':
 
-  createElement() {
-    console.log("creating element in factory")
-    console.log(this.storage)
+    }
+    console.log('creating element in factory');
+    console.log(this.storage);
     this.storage.push(99);
     this.storage = [...this.storage];
-    //this.storageService.addElement(MOCKBPMNELEMENT);
   }
 
   set newStorageValue(newValue) {
-      this.storage.push(newValue)
+      this.storage.push(newValue);
   }
 
   get storageValue() {
     return this.storage;
   }
-
-  trackbyFunction(index, item) {
-    if(!item) return null;
-    return index;
-  }
-
-  
-
 }
