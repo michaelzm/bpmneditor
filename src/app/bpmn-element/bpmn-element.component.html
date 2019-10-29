@@ -1,4 +1,4 @@
-<div class = "bpmn-element" cdkDrag (cdkDragEnded)="dragEnd($event)" (dblclick)="displayInformations($event)">
+<div class = "bpmn-element" cdkDrag (cdkDragStarted)="dragStart($event)" (cdkDragEnded)="dragEnd($event)" (dblclick)="displayInformations($event)">
     <div class = "bpmn-element-title">
         {{data}}
     </div>

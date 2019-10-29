@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MOCKBPMNELEMENT } from './mock-bpmn-element-storage';
+import { BpmnElementComponent } from './bpmn-element.component';
+import { BpmnElement } from './bpmn-element';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class BpmnElementsService {
 
   constructor() { }
 
-  getElement() {
-    return MOCKBPMNELEMENT;
+  getElements() {
+    return new BpmnElement(BpmnElementComponent, {name: 'TestActivity'});
   }
 }

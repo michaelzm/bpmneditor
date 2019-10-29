@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { BpmnElementFactoryComponent } from '../bpmn-element-factory/bpmn-element-factory.component';
+import { Component, OnInit, Input, ViewChild, ComponentFactoryResolver, OnDestroy } from '@angular/core';
+
+import { BpmnElementsService } from '../bpmn-element/bpmn-elements.service';
+
+import { BpmnElement } from '../bpmn-element/bpmn-element';
+
 
 @Component({
   selector: 'app-main-editor',
@@ -7,29 +11,14 @@ import { BpmnElementFactoryComponent } from '../bpmn-element-factory/bpmn-elemen
   styleUrls: ['./main-editor.component.css']
 })
 export class MainEditorComponent implements OnInit {
-  elements: string[] = [];
-  factory: any;
 
-  constructor(factory: BpmnElementFactoryComponent) {
-    this.factory = factory;
+  bpmnElements: BpmnElement; // has to be array later
+
+  constructor(private bpmnElementsService: BpmnElementsService) {
    }
 
   ngOnInit() {
-  }
-
-  logSomething() {
-    console.log("something")
-  }
-
-  createElementOnEditor(type){
-    console.log(type)
-    this.elements.push(type)
-    console.log(this.elements.length)
-  }
-
-  addElement(test: String): void {
-    console.log("adding Element");
-    this.factory.createElement();
+    this.bpmnElements = this.bpmnElementsService.getElements();
   }
 
 }

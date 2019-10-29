@@ -1,10 +1,8 @@
 import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[bpmn-element-host]'
+  selector: '[elements-host]',
 })
-export class BpmnDirectiveDirective {
-
+export class ElementDirective {
   constructor(public viewContainerRef: ViewContainerRef) { }
-
 }

@@ -9,7 +9,8 @@ import { MainEditorComponent } from './main-editor/main-editor.component';
 import { BpmnElementComponent } from './bpmn-element/bpmn-element.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { BpmnElementFactoryComponent } from './bpmn-element-factory/bpmn-element-factory.component';
-import { BpmnDirectiveDirective } from './bpmn-directive.directive';
+import { ModelingSurfaceComponent } from './modeling-surface/modeling-surface.component';
+import { ElementDirective } from './main-editor/element-container.directive';
 
 @NgModule({
   declarations: [
@@ -19,13 +20,15 @@ import { BpmnDirectiveDirective } from './bpmn-directive.directive';
     BpmnElementComponent,
     TopbarComponent,
     BpmnElementFactoryComponent,
-    BpmnDirectiveDirective
+    ModelingSurfaceComponent,
+    ElementDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DragDropModule
   ],
+  entryComponents: [BpmnElementComponent],
   providers: [
     BpmnElementFactoryComponent,
   ],

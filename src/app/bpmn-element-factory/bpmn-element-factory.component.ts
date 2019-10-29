@@ -40,6 +40,11 @@ export class BpmnElementFactoryComponent implements OnInit {
     return this.storage;
   }
 
+  trackbyFunction(index, item) {
+    if(!item) return null;
+    return index;
+  }
+
   
 
 }

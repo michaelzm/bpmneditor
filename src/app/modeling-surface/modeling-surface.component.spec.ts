@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BpmnElementComponent } from './bpmn-element.component';
+import { ModelingSurfaceComponent } from './modeling-surface.component';
 
-describe('BpmnElementComponent', () => {
-  let component: BpmnElementComponent;
-  let fixture: ComponentFixture<BpmnElementComponent>;
+describe('ModelingSurfaceComponent', () => {
+  let component: ModelingSurfaceComponent;
+  let fixture: ComponentFixture<ModelingSurfaceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BpmnElementComponent ]
+      declarations: [ ModelingSurfaceComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BpmnElementComponent);
+    fixture = TestBed.createComponent(ModelingSurfaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
