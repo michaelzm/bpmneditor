@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ChangeDetectorRef } from '@angular/core';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainEditorComponent } from './main-editor/main-editor.component';
 import { BpmnElementComponent } from './bpmn-element/bpmn-element.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { BpmnElementFactoryComponent } from './bpmn-element-factory/bpmn-element-factory.component';
+import { BpmnDirectiveDirective } from './bpmn-directive.directive';
 
 @NgModule({
   declarations: [
@@ -15,14 +17,18 @@ import { TopbarComponent } from './topbar/topbar.component';
     SidebarComponent,
     MainEditorComponent,
     BpmnElementComponent,
-    TopbarComponent
+    TopbarComponent,
+    BpmnElementFactoryComponent,
+    BpmnDirectiveDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DragDropModule
   ],
-  providers: [],
+  providers: [
+    BpmnElementFactoryComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
